@@ -4,7 +4,6 @@ const chalk = require("chalk");
 const yosay = require("yosay");
 
 const Case = require("case");
-const { doesNotMatch } = require("yeoman-assert");
 
 module.exports = class extends Generator {
   prompting() {
@@ -36,7 +35,7 @@ module.exports = class extends Generator {
         name: "selector",
         message: "What is the components selector?",
         default: this.appname.replace(" ", "-")
-      },
+      }
     ];
 
     return this.prompt(prompts).then(props => {
@@ -56,13 +55,16 @@ module.exports = class extends Generator {
         let text = content.toString();
         text = text.replace(/__author__/g, author);
         text = text.replace(/__kebab-app-name__/g, kebabAppName);
-        text = text.replace(/__capital-case-name__/g, capitalAppName);
+        text = text.replace(/__capital-app-name__/g, capitalAppName);
         return text.replace(/__selector__/g, kebabSelector);
       }
     });
   }
 
   install() {
-    this.installDependencies();
+    this.installDependencies({
+      npm: { legacyPeerDeps: true },
+      bower: false
+    });
   }
 };

@@ -1,6 +1,17 @@
 # generator-ng-template [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > A custom Angular base project template
 
+Since every time I want to start a new Angular project I spend a lot of time configuring the project I created this Yeoman generator.
+
+The generated project has the following differences from the `angular-cli` one:
+
+* `jest` instead of `karma`
+* `eslint` and `prettier` instead of `ts-lint`
+* `ngx-translate` is already installed, configured and with a working example in the `AppComponent`
+* Angular Material is installed and a custom theme is configured
+
+The generator will ask you input to use in the codebase like the author name and the selector for the Angular components.
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-ng-template using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
