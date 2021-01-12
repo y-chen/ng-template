@@ -20,7 +20,8 @@ module.exports = class extends Generator {
       {
         type: "input",
         name: "author",
-        message: "What is the author name?"
+        message: "What is the author name?",
+        default: 'John Doe'
       },
       {
         type: "input",
@@ -50,7 +51,9 @@ module.exports = class extends Generator {
     const kebabAppName = Case.kebab(appName);
     const kebabSelector = Case.kebab(selector);
 
-    this.fs.copy(this.templatePath("**/*"), this.destinationPath(), {
+    const destinationPath = this.destinationPath();
+
+    this.fs.copy(this.templatePath("**/*"), destinationPath, {
       process: function(content) {
         let text = content.toString();
         text = text.replace(/__author__/g, author);
@@ -59,6 +62,22 @@ module.exports = class extends Generator {
         return text.replace(/__selector__/g, kebabSelector);
       }
     });
+
+    this.fs.copy(this.templatePath("**/.*"), destinationPath, {
+      process: function(content) {
+        let text = content.toString();
+        text = text.replace(/__author__/g, author);
+        text = text.replace(/__kebab-app-name__/g, kebabAppName);
+        text = text.replace(/__capital-app-name__/g, capitalAppName);
+        return text.replace(/__selector__/g, kebabSelector);
+      }
+    });
+
+    this.fs.copy(
+      `${destinationPath}/gitignore`,
+      `${destinationPath}/.gitignore`
+    );
+    this.fs.delete(`${destinationPath}/gitignore`);
   }
 
   install() {
