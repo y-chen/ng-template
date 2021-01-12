@@ -1,0 +1,12 @@
+<span translate>app.message</span>
+
+<div class="language-selector">
+	<button
+		mat-raised-button
+		color="#fff"
+		*ngFor="let culture of cultures"
+		(click)="onButtonClick(culture.language)"
+	>
+		<i class="flag-icon flag-icon-{{ culture.flag || culture.language }}"></i>
+	</button>
+</div>

@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"outDir": "./out-tsc/spec",
+		"types": ["node", "jest", "jest-extended", "jest-mock-extended"]
+	},
+	"extends": "./tsconfig.json",
+	"files": ["src/polyfills.ts"],
+	"include": ["global.d.ts", "src/**/*.spec.ts", "src/**/*.d.ts"]
+}

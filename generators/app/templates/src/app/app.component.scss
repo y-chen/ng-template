@@ -1,0 +1,12 @@
+@import 'mixins';
+
+:host-context {
+	@include flex-box(column, center, center);
+	gap: 5px;
+	height: 100vh;
+
+	> .language-selector {
+		@include flex-box(row, center);
+		gap: 5px;
+	}
+}
