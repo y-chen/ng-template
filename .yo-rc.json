@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Yiyi Chen",
+      "authorEmail": "chen.yiyi@hotmail.it",
+      "authorUrl": "https://github.com/y-chen"
+    }
+  }
+}

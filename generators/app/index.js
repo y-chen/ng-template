@@ -20,10 +20,9 @@ module.exports = class extends Generator {
       {
         type: "input",
         name: "author",
-        message: "What is the name of the author?",
-        validate: (input) =>
-          Case.of(input) === "kebab" || "app-name-must-be-in-kebab-case",
-        default: this.appname.replace(" ", "-"),
+        message: "What is the author name?",
+        validate: input => input,
+        default: this.appname.replace(" ", "-")
       },
       {
         type: "input",
@@ -31,16 +30,16 @@ module.exports = class extends Generator {
         message: "What is the name of the app? (use-kebab-case)",
         validate: input =>
           Case.of(input) === "kebab" || "app-name-must-be-in-kebab-case",
-        default: this.appname.replace(" ", "-"),
+        default: this.appname.replace(" ", "-")
       },
       {
         type: "input",
         name: "selector",
-        message: "What is the selector components selector? (use-kebab-case)",
+        message: "What is the components selector? (use-kebab-case)",
         validate: input =>
           Case.of(input) === "kebab" || "app-name-must-be-in-kebab-case",
         default: this.appname.replace(" ", "-")
-      },
+      }
     ];
 
     return this.prompt(prompts).then(props => {
