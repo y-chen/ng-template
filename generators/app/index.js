@@ -78,6 +78,8 @@ module.exports = class extends Generator {
       `${destinationPath}/.gitignore`
     );
     this.fs.delete(`${destinationPath}/gitignore`);
+
+    this.fs.copy(this.templatePath(".vscode"), this.destinationPath(".vscode"));
   }
 
   install() {
