@@ -1,4 +1,5 @@
-# generator-ng-template [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-ng-template 
+
 > A custom Angular base project template
 
 Since every time I want to start a new Angular project I spend a lot of time configuring the project I created this Yeoman generator.
