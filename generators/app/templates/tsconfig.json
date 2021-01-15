@@ -21,8 +21,8 @@
 		"noImplicitReturns": true,
 		"outDir": "./.dist/out-tsc",
 		"paths": {
-			"@at/app/*": ["src/app/*"],
-			"@at/environments/*": ["src/environments/*"]
+			"@__selector__/app/*": ["src/app/*"],
+			"@__selector__/environments/*": ["src/environments/*"]
 		},
 		"resolveJsonModule": true,
 		"sourceMap": true,
