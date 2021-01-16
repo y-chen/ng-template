@@ -16,8 +16,8 @@
 	"moduleDirectories": ["node_modules", "src"],
 	"moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "html"],
 	"moduleNameMapper": {
-		"@wa/app/(.*)": "<rootDir>/src/app/$1",
-		"@wa/environments/(.*)": "<rootDir>/src/environments/$1",
+		"@__selector__/app/(.*)": "<rootDir>/src/app/$1",
+		"@__selector__/environments/(.*)": "<rootDir>/src/environments/$1",
 		"^app/(.*)$": "<rootDir>/src/app/$1",
 		"^assets/(.*)$": "<rootDir>/src/assets/$1",
 		"^environments/(.*)$": "<rootDir>/src/environments/$1",
